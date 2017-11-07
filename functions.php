@@ -15,7 +15,7 @@ function status_header($code = 200) {
     header("HTTP/1.0 ".$code." ".$messege[$code]);
 }
 
-status_header(404);
+status_header(302);
 
 // [header => värde]
 function headers(array $headers = []) {
@@ -25,8 +25,8 @@ function headers(array $headers = []) {
     
 }
 headers([
-    "Connection" => "keep-alive",
-    "Date" => "Fri, 08 Nov 2017 12:36:10 GMT"
+    "Connection" => "Wololo",
+    "Vary" => "I work"
 ]);
 
 function redirect($url, $code = 302) {
