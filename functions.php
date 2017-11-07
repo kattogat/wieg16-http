@@ -19,10 +19,14 @@ status_header(404);
 
 // [header => värde]
 function headers(array $headers = []) {
-    header("HTTP/1.0 ".$code." ".$messege[$code]);
+    foreach ($headers as $key => $value) {
+        header($key . ":" . $value);
+    }
+    
 }
 headers([
     "Connection" => "keep-alive",
+    "Date" => "Fri, 08 Nov 2017 12:36:10 GMT"
 ]);
 
 function redirect($url, $code = 302) {
